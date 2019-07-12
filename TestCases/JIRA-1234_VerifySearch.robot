@@ -31,7 +31,6 @@ Click on the first search listing
 
 Verify item title
     ${displayedTitle}=   Itempage.Get item title
-#    log to console     ${displayedTitle}
     should be equal as strings  ${displayedTitle}  ${cd_title}
 
 Verify item price
