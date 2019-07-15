@@ -5,8 +5,9 @@ Resource    ../Libraries/Utilities.robot
 Resource    ../PageObjects/Itempage.robot
 Resource    ../PageObjects/AddCartPopUpPage.robot
 
-Test Setup
-Test Teardown
+Suite Setup  Utilities.Start browser and maximise   http://www.ebay.com  firefox
+Suite Teardown  Utilities.Close browser
+
 
 *** Variables ***
 ${page_title}       Electronics, Cars, Fashion, Collectibles, Coupons and More | eBay
@@ -16,18 +17,12 @@ ${regex_price}      [0-9]+.[0-9]+
 ${listedSearchPrice}   #Local variable - Value is to be fetched and stored here
 
 
-
 *** Test Cases ***
 Navigate to web site and verify title
-    open browser    http://www.ebay.com    firefox
-    Utilities.Maximise browser
     title should be  ${page_title}
-#    close browser
 
 # each test should be independent
 Verify search results
-#    open browser    http://www.ebay.com    firefox
-#    Utilities.Maximise browser
     Homepage.Search for specific item    ${cd_title}
     ${actualValue} =    ListingPage.Get result count
     should match regexp  ${actualValue}    ${regex_pattern}
@@ -53,5 +48,3 @@ Click add to cart
 #Click go to cart
 #    AddToCartPopUp.Click go to cart
 
-Close the browser
-    Utilities.Close browser
