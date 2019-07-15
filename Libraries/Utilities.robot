@@ -1,4 +1,4 @@
-# keywords that can be used in any company
+# keywords that can be reused
 *** Settings ***
 Library   SeleniumLibrary
 

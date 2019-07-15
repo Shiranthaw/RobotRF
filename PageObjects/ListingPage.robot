@@ -1,4 +1,5 @@
-*** Settings ***
+#Page objects of page that show all search results of the searched item
+]*** Settings ***
 Library    SeleniumLibrary
 
 *** Variables ***

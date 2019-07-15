@@ -1,3 +1,4 @@
+#Page objects of home page
 *** Settings ***
 Library    SeleniumLibrary
 
